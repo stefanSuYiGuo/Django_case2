@@ -23,4 +23,5 @@ urlpatterns = [
     path('page/<str:pageName>', myViews.topage),  # restful URL 表示地址栏中传递参数
     path('login/', myViews.loginPage),
     path('user/log/', myViews.login),
+    path('user/register/', myViews.register)
 ]
