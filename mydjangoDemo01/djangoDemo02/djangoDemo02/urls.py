@@ -20,5 +20,6 @@ from myapp01 import views as myViews  # 别名
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('test/', myViews.test),
-    path('page/<str:pageName>', myViews.topage),  # restful URL 表示地址栏中传递参数
+    # path('page/<str:pageName>', myViews.topage),  # restful URL 表示地址栏中传递参数
+    path('login/', myViews.loginPage)
 ]
