@@ -114,3 +114,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+SESSION_COOKIE_AGE = 60 * 30  # 30 MINS
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True  # release session while close the browser
