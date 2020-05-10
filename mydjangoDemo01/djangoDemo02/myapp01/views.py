@@ -6,4 +6,4 @@ from django.shortcuts import render
 # 定义视图函数
 def test(request):
     print('test')
-    pass
+    return render(request, 'test.html')
