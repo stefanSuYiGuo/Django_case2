@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from myapp01 import views as myViews  # 别名
+from myapp02 import views as app02Views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,5 +24,7 @@ urlpatterns = [
     path('page/<str:pageName>', myViews.topage),  # restful URL 表示地址栏中传递参数
     path('login/', myViews.loginPage),
     path('user/log/', myViews.login),
-    path('user/register/', myViews.register)
+    path('user/register/', myViews.register),
+    path('testRender/', app02Views.testRender),
+    path('testRedirect/', app02Views.testRedirect),
 ]
