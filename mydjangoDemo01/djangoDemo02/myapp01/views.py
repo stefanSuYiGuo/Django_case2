@@ -24,7 +24,8 @@ def login(request):
     # 获得客户提交的数据 get 请求方式
     userAcc = request.GET.get('userAcc', None)  # get account
     userPass = request.GET.get('userPass', None)  # get psd
-    if 'admin' == userAcc and userPass == '123456':
+    if userAcc == 'admin' and userPass == '123456':
+        request.session['userAccount'] = userAcc  # session中存储数据
         print('valid account')
         return render(request, 'test.html')
     return render(request, 'login.html')
