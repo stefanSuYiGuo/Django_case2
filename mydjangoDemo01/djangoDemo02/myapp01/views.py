@@ -33,4 +33,5 @@ def login(request):
 # register
 def register(request):
     print('registering...')
-    return render(request, 'test.html')
+
+    return render(request, 'login.html')
