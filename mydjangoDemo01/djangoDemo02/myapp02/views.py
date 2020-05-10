@@ -5,6 +5,7 @@ from django.shortcuts import render, redirect
 
 # 测试请求转发 一个可访问应用的转发
 def testRender(request):
+    # 在views.py中获得session中的数据方法
     print('session data ' + request.session.get('userAccount'))
     context = dict()  # 字典类型 {key: value, key: value}
     context['name'] = 'stefan'  # assign data
