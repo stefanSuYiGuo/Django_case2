@@ -33,5 +33,8 @@ def login(request):
 # register
 def register(request):
     print('registering...')
-
+    userAcc = request.POST.get('userAcc')  # post方式获得账号信息
+    userAdd = request.POST.getlist('addr')  # 获得地址 一个参数多个值
+    print(userAcc + '    ')
+    print(userAdd)
     return render(request, 'login.html')
