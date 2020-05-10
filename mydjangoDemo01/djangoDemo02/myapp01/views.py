@@ -9,5 +9,6 @@ def test(request):
     return render(request, 'test.html')
 
 
+# 要与视图函数的真正html值相同
 def topage(request, pageName):
     return render(request, pageName)
