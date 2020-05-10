@@ -28,3 +28,8 @@ def login(request):
         print('valid account')
         return render(request, 'test.html')
     return render(request, 'login.html')
+
+
+# register
+def register(request):
+    pass
