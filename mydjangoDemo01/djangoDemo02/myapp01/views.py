@@ -32,4 +32,5 @@ def login(request):
 
 # register
 def register(request):
-    pass
+    print('registering...')
+    return render(request, 'test.html')
