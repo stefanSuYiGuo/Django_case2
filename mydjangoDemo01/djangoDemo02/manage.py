@@ -5,6 +5,7 @@ import sys
 
 
 def main():
+    print('Running Demo 02')
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'djangoDemo02.settings')
     try:
         from django.core.management import execute_from_command_line
