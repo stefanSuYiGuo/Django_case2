@@ -7,7 +7,7 @@
     <title>Title</title>
 </head>
 <body>
-<!-- Django中post方式提交需要设置跨域请求 -->
+<!-- Django中post方式提交需要设置跨域请求 csrf_token -->
 <form action="/user/log/" method="get">
     account: <input type="text" name="userAcc" placeholder="input account number" required>
     <br/>
