@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+</head>
+<body>
+<!-- Django中post方式提交需要设置跨域请求 csrf_token -->
+<form action="" method="post">
+    account: <input type="text" name="userAcc" placeholder="input account number" required>
+    <br/>
+    password: <input type="password" name="userPass"> <br/>
+    confirm password: <input type="password"> <br/>
+    address:
+    <select name="addr">
+        <option value="Beijing">Beijing</option>
+        <option value="Shanghai">Shanghai</option>
+        <option value="Taiyuan">Taiyuan</option>
+        <option value="Xian">Xian</option>
+    </select>
+    <input type="submit" value="register">
+</form>
+
+</body>
+</html>
