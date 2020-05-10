@@ -8,7 +8,7 @@
 </head>
 <body>
 <!-- Django中post方式提交需要设置跨域请求 csrf_token -->
-<form action="/user/register" method="post">
+<form action="/user/register/" method="post">
     {% csrf_token %}
     account: <input type="text" name="userAcc" placeholder="input account number" required>
     <br/>
