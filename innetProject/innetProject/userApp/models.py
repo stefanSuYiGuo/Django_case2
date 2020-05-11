@@ -43,4 +43,7 @@ class OrderInfo(models.Model):
     orderDate = models.DateTimeField(auto_now=True)  # 添加数据时默认系统当前时间
     orderMoney = models.FloatField()
     UserInfo = models.ForeignKey(UserInfo, on_delete=models.CASCADE)  # 设置外键 CASCADE 用来删除
+
+    class Meta:
+        db_table = 'order_table'  # 自定义表名
     pass
