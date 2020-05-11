@@ -6,9 +6,9 @@
 </head>
 <body>
 Show Data<br/>
-{{ userinfo }}<br/>
+{{ userInfo }}<br/>
 {# 显示字典中的数据 --注释 #}
-Name: {{ userinfo.name }} Age: {{ userinfo.age }} Gender: {{ userinfo.gender }}<br/> <!-- 字典对象中的属性 -->
+Name: {{ userInfo.name }} Age: {{ userInfo.age }} Gender: {{ userInfo.gender }}<br/> <!-- 字典对象中的属性 -->
 {# 显示list, set, tuple类型数据 #}
 <table border="1">
     <tr>
@@ -31,16 +31,25 @@ Name: {{ userinfo.name }} Age: {{ userinfo.age }} Gender: {{ userinfo.gender }}<
     {% endfor %}
 </table>
 <hr/>
-Gender {{ userinfo.gender }} <br/>
-<!--{% if userinfo.gender == 'male' %}-->
+Gender {{ userInfo.gender }} <br/>
+<!--{% if userInfo.gender == 'male' %}-->
 <!--Male <input type="radio" name="gender" checked>-->
 <!--{% endif %}-->
-<!--{% if userinfo.gender == 'female' %}-->
+<!--{% if userInfo.gender == 'female' %}-->
 <!--Female <input type="radio" name="gender" checked>-->
 <!--{% endif %}-->
 {# 运算符之间必须要有空格——即使报错 #}
-Male <input type="radio" name="gender" {%if userinfo.gender== 'male'%} checked {% endif %}>
-Female <input type="radio" name="gender" {%if userinfo.gender== 'female'%} checked {% endif %}>
+Male <input type="radio" name="gender" {% if userInfo.gender== 'male'%} checked {% endif %}>
+Female <input type="radio" name="gender" {% if userInfo.gender== 'female'%} checked {% endif %}>
+<br/>
+Age Range:
+{% if userInfo.age > 60 %}
+Senior Citizen
+{% elif userInfo.age >= 30 and userInfo.age <= 60 %}
+Middle age
+{% else %}
+Teenager
+{% endif %}
 
 </body>
 </html>
