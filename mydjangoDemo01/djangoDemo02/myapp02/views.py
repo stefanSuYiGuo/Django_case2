@@ -22,8 +22,21 @@ def testRedirect(request):
 def testTemplate(request):
     # 首先存储数据 用dict()
     context = dict()
+    # userinfo: dict
     context['userinfo'] = {'name': 'Stefan', 'age': 20, 'gender': 'male', 'hobby': ['Play', 'Climb']}
+    # infos: list + dict
     context['infos'] = [{'name': 'Stefan', 'age': 20, 'gender': 'Male', 'hobby': ['Play', 'Climb']},
                         {'name': 'Lizzie', 'age': 19, 'gender': 'Female', 'hobby': ['Dance', 'Piano']},
                         {'name': 'Constance', 'age': 19, 'gender': 'Female', 'hobby': ['Makeup', 'Reading']}]
-    return render(request, 'testTemplate.html')
+    """
+    All data structure:
+    {
+     'userinfo': {'name': 'Stefan', 'age': 20, 'gender': 'male', 'hobby': ['Play', 'Climb']},
+     'infors': [
+                {'name': 'Stefan', 'age': 20, 'gender': 'Male', 'hobby': ['Play', 'Climb']},
+                {'name': 'Lizzie', 'age': 19, 'gender': 'Female', 'hobby': ['Dance', 'Piano']},
+                {'name': 'Constance', 'age': 19, 'gender': 'Female', 'hobby': ['Makeup', 'Reading']}
+                ]
+    }
+    """
+    return render(request, 'testTemplate.html', context=context)
