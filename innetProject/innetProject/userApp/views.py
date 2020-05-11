@@ -24,7 +24,8 @@ def orderAdd(request):
                                    userBirth='2006-06-20',
                                    userGender='Male')[0]  # 条件查询 并只获取一个数据
     # 添加订单
-    OrderInfo.objects.create(orderId=(user.userID + getOrderId()),
+    print(user.userID)
+    OrderInfo.objects.create(orderId=(str(user.userID) + getOrderId()),
                              orderMoney=123.5,
                              UserInfo=user)
-    return None
+    return render(request, 'test.html')
