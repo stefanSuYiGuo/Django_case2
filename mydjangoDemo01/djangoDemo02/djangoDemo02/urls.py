@@ -27,4 +27,5 @@ urlpatterns = [
     path('user/register/', myViews.register),
     path('testRender/', app02Views.testRender),
     path('testRedirect/', app02Views.testRedirect),
+    path('testTemplate/', app02Views.testTemplate),
 ]
