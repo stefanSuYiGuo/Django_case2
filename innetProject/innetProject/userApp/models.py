@@ -8,6 +8,7 @@ from django.db import models
 
 
 # 定义模型对象
+# userInfo 和 orderInfo是一对多的方式
 class UserInfo(models.Model):
     """
     列           类型          要求
