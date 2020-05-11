@@ -28,3 +28,19 @@ class UserInfo(models.Model):
         db_table = 'userInfoTable'
 
     pass
+
+
+class OrderInfo(models.Model):
+    """
+    订单表格
+    列           类型          要求
+    订单编号      varchar       primary key
+    下单日期      datetime      /
+    订单金额      float         /
+    用户编号                    foreign key
+    """
+    orderId = models.CharField(primary_key=True, max_length=100)
+    orderDate = models.DateTimeField(auto_now=True)  # 添加数据时默认系统当前时间
+    orderMoney = models.FloatField()
+    UserInfo = models.ForeignKey(UserInfo, on_delete=models.CASCADE)  # 设置外键 CASCADE 用来删除
+    pass
