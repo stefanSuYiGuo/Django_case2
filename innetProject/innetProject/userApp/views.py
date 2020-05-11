@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import UserInfo, OrderInfo
+from .models import UserInfo, OrderInfo, Product, UserGoods
 from .util import getOrderId
 
 
@@ -28,4 +28,11 @@ def orderAdd(request):
     OrderInfo.objects.create(orderId=(str(user.userID) + getOrderId()),
                              orderMoney=123.5,
                              UserInfo=user)
+    return render(request, 'test.html')
+
+
+def userAddGoods(request):
+    pro = Product.objects.get(proId=1)  # 获得一个商品对象
+    userObj = UserInfo.objects.filter(userAccount='lizzie')[0]
+    UserGoods.objects.create(user=userObj, pro=pro)  # 添加一条数据到表中
     return render(request, 'test.html')
