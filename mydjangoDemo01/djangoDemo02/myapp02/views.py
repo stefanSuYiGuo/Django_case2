@@ -23,7 +23,7 @@ def testTemplate(request):
     # 首先存储数据 用dict()
     context = dict()
     # userinfo: dict
-    context['userinfo'] = {'name': 'Stefan', 'age': 20, 'gender': 'male', 'hobby': ['Play', 'Climb']}
+    context['userInfo'] = {'name': 'Stefan', 'age': 20, 'gender': 'male', 'hobby': ['Play', 'Climb']}
     # infos: list + dict
     context['infos'] = [{'name': 'Stefan', 'age': 20, 'gender': 'Male', 'hobby': ['Play', 'Climb']},
                         {'name': 'Lizzie', 'age': 19, 'gender': 'Female', 'hobby': ['Dance', 'Piano']},
