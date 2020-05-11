@@ -22,7 +22,7 @@ def orderAdd(request):
                                    userAccount='lizzie',
                                    userPass='stefan_su',
                                    userBirth='2006-06-20',
-                                   userGender='Male')  # 条件查询
+                                   userGender='Male')[0]  # 条件查询 并只获取一个数据
     # 添加订单
     OrderInfo.objects.create(orderId=(user.userID + getOrderId()),
                              orderMoney=123.5,
