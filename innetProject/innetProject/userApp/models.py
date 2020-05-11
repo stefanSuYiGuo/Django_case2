@@ -8,7 +8,7 @@ from django.db import models
 
 
 # 定义模型对象
-# userInfo 和 orderInfo是一对多的方式
+# userInfo 和 orderInfo是一对多的方式 (用户和订单)
 class UserInfo(models.Model):
     """
     列           类型          要求
@@ -47,4 +47,19 @@ class OrderInfo(models.Model):
 
     class Meta:
         db_table = 'order_table'  # 自定义表名
+
     pass
+
+
+# 商品模型表
+class Product(models.Model):
+    proId = models.BigAutoField(primary_key=True)  # 商品编号 自增长
+    proName = models.CharField(max_length=200)  # 商品名称
+    proPrice = models.FloatField(default=0.0)  # 商品单价
+    proImg = models.CharField(max_length=200)  # 商品图片
+
+
+# 用户购物车 多对多关系设置
+class UserGoods(models.Model):
+    user = models.ForeignKey(UserInfo, on_delete=models.DO_NOTHING)
+    pro = models.ForeignKey(Product, on_delete=models.DO_NOTHING)
