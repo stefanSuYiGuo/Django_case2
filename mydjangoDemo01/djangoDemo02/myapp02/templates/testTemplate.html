@@ -8,7 +8,39 @@
 Show Data<br/>
 {{ userinfo }}<br/>
 {# 显示字典中的数据 --注释 #}
-Name: {{ userinfo.name }} Age: {{ userinfo.age }} Gender: {{ userinfo.gender }} <!-- 字典对象中的属性 -->
+Name: {{ userinfo.name }} Age: {{ userinfo.age }} Gender: {{ userinfo.gender }}<br/> <!-- 字典对象中的属性 -->
+{# 显示list, set, tuple类型数据 #}
+<table border="1">
+    <tr>
+        <td>Name</td>
+        <td>Age</td>
+        <td>Gender</td>
+        <td>Hobby</td>
+    </tr>
+    {% for us in infos %}
+    <tr>
+        <td>{{ us.name }}</td>
+        <td>{{ us.age }}</td>
+        <td>{{ us.gender }}</td>
+        <td><!-- {{ us.hobby }} -->
+            {% for ho in us.hobby %}
+            {{ ho }},
+            {% endfor %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+<hr/>
+Gender {{ userinfo.gender }} <br/>
+<!--{% if userinfo.gender == 'male' %}-->
+<!--Male <input type="radio" name="gender" checked>-->
+<!--{% endif %}-->
+<!--{% if userinfo.gender == 'female' %}-->
+<!--Female <input type="radio" name="gender" checked>-->
+<!--{% endif %}-->
+{# 运算符之间必须要有空格——即使报错 #}
+Male <input type="radio" name="gender" {%if userinfo.gender== 'male'%} checked {% endif %}>
+Female <input type="radio" name="gender" {%if userinfo.gender== 'female'%} checked {% endif %}>
 
 </body>
 </html>
