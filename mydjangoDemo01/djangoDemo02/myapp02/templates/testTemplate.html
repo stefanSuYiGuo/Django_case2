@@ -40,8 +40,8 @@ Gender {{ userInfo.gender }} <br/>
 <!--Female <input type="radio" name="gender" checked>-->
 <!--{% endif %}-->
 {# 运算符之间必须要有空格——即使报错 #}
-Male <input type="radio" name="gender" {% if userInfo.gender== 'male'%} checked {% endif %}>
-Female <input type="radio" name="gender" {% if userInfo.gender== 'female'%} checked {% endif %}>
+Male <input type="radio" name="gender" {% if userInfo.gender == 'male'%} checked {% endif %}>
+Female <input type="radio" name="gender" {% if userInfo.gender == 'female'%} checked {% endif %}>
 <br/>
 Age Range:
 {% if userInfo.age > 60 %}
