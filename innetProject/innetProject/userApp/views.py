@@ -7,8 +7,8 @@ from .util import getOrderId
 # 测试数据添加
 def userRequest(request):
     # 创建并保存对象
-    UserInfo.objects.create(userID='002',
-                            userAccount='lizzie',
+    UserInfo.objects.create(userID='005',
+                            userAccount='lizzie_1',
                             userPass='stefan_su',
                             userBirth='2006-06-20',
                             userGender='Male')
