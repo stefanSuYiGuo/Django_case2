@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import UserInfo, OrderInfo
-import time
+from .util import getOrderId
 
 
 # Create your views here.
