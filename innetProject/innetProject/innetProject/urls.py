@@ -21,5 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('test/add/', userViews.userRequest),
     path('test/orderadd/', userViews.orderAdd),
-    path('test/adduserGoods', userViews.userAddGoods),
+    path('test/adduserGoods/', userViews.userAddGoods),
 ]
