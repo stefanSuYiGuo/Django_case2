@@ -16,3 +16,14 @@ def testRender(request):
 # 响应重定向 新发起的请求 可以是任何可访问的url
 def testRedirect(request):
     return redirect('http://www.baidu.com')  # 不能是模板名 可以是内部/外部 如： redirect('/page/login.html')
+
+
+# 模板中复杂数据展示
+def testTemplate(request):
+    # 首先存储数据 用dict()
+    context = dict()
+    context['userinfo'] = {'name': 'Stefan', 'age': 20, 'gender': 'male'}
+    context['infos'] = [{'name': 'Stefan', 'age': 20, 'gender': 'Male'},
+                        {'name': 'Lizzie', 'age': 19, 'gender': 'Female'},
+                        {'name': 'Constance', 'age': 19, 'gender': 'Female'}]
+    return render(request, 'testTemplate.html')
