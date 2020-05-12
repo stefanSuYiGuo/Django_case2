@@ -26,4 +26,5 @@ urlpatterns = [
     path('test/adduserGoods/', userViews.userAddGoods),
     path('', userViews.toIndex),
     path('goods/addGoods', userViews.showUserGoods),
+    path('checkAcc/', userViews.checkUserAccIsReg),
 ]
