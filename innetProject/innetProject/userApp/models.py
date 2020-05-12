@@ -26,6 +26,7 @@ class UserInfo(models.Model):
     userGender = models.CharField(max_length=6)
 
     # 另一种方式建立 M:M关系  这会让Django自动创建表 userInfoTable_products
+    # 但是这样创建表的方式 无法自定义表名
     products = models.ManyToManyField('Product')
 
     class Meta:
