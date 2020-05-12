@@ -19,3 +19,12 @@ def createUserId():
     userId = result['userID_max'] + 1
     # userID = int(result) + 1
     return userId
+
+
+# 返回当前登陆的用户对象
+def loingUser(userAcc, userPass):
+    try:  # 对象存在返回对象  对象不存在抛出异常
+        login_user = UserInfo.objects.get(userAccount=userAcc, userPass=userPass)
+        return login_user
+    except Exception:
+        return None
