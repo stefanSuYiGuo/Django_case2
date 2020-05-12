@@ -20,7 +20,7 @@ def userLogin(request):
         request.session['logUser'] = logUser.userAccount
     else:
         return render(request, 'login.html', context={'error': 'Invalid Account or Password'})
-    return render(request, 'test.html')
+    return render(request, 'main.html')
 
 
 # 公共函数 用来访问界面 并必须使用pageName一模一样的命名
@@ -77,3 +77,12 @@ def userAddGoods(request):
     userObj = UserInfo.objects.filter(userAccount='lizzie')[0]
     # UserGoods.objects.create(user=userObj, pro=pro)  # 添加一条数据到表中
     return render(request, 'test.html')
+
+
+# 显示登陆者的购物车
+def showUserGoods(request):
+    user = UserInfo.objects.get(request.session.get('logUser'))  # 查找登陆的用户对象
+    products = user.products.all()  # 获得当前用户的购物车商品
+    context = {'products': products}
+    # return render(request, 'goodsPage.html')
+    return render(request, 'goodsPage.html', context=context)
