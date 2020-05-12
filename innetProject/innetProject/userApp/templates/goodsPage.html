@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+</head>
+<body>
+{% include 'top.html' %}
+<hr/>
+Show Goods
+<table>
+    <tr>
+        <td>
+            Name
+        </td>
+        <td>
+            Price
+        </td>
+    </tr>
+    {% for product in products %}
+    <tr>
+        <td>
+            {{ product.proName }}
+        </td>
+        <td>
+            {{ product.proPrice }}
+        </td>
+    </tr>
+</table>
+</body>
+</html>
