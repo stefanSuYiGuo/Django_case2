@@ -7,6 +7,10 @@ import datetime
 
 
 # Create your views here.
+def toIndex(request):
+    return render(request, 'index.html')
+
+
 # 公共函数 用来访问界面 并必须使用pageName一模一样的命名
 def toPage(request, pageName):
     return render(request, pageName)
