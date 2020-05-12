@@ -19,6 +19,7 @@ from userApp import views as userViews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('page/<str:pageName>', userViews.toPage),
     path('user/add/', userViews.userRequest),
     path('test/orderadd/', userViews.orderAdd),
     path('test/adduserGoods/', userViews.userAddGoods),
