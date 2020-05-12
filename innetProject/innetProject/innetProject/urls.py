@@ -24,5 +24,6 @@ urlpatterns = [
     path('user/login/', userViews.userLogin),
     path('test/orderadd/', userViews.orderAdd),
     path('test/adduserGoods/', userViews.userAddGoods),
-    path('', userViews.toIndex)
+    path('', userViews.toIndex),
+    path('goods/addGoods', userViews.showUserGoods)
 ]
