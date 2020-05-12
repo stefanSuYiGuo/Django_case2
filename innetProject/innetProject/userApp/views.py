@@ -5,16 +5,17 @@ from .util import getOrderId
 
 
 # Create your views here.
-# 测试数据添加
+# 用户注册 register.html处理
 def userRequest(request):
-    # 创建并保存对象
-    UserInfo.objects.create(userID='005',
-                            userAccount='lizzie_1',
-                            userPass='stefan_su',
-                            userBirth='2006-06-20',
-                            userGender='Male')
-
-    return render(request, 'test.html')
+    # # 创建并保存对象
+    # UserInfo.objects.create(userID='005',
+    #                         userAccount='lizzie_1',
+    #                         userPass='stefan_su',
+    #                         userBirth='2006-06-20',
+    #                         userGender='Male')
+    #
+    # return render(request, 'test.html')
+    return render(request, 'register.html')
 
 
 def orderAdd(request):
