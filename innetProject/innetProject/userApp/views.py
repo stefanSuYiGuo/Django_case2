@@ -1,8 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 # from .models import UserInfo, OrderInfo, Product, UserGoods
 from .models import UserInfo, OrderInfo, Product
 from .util import getOrderId
-from .service import accountIsExit, createUserId
+from .service import accountIsNotExit, createUserId
+import datetime
 
 
 # Create your views here.
@@ -23,14 +24,21 @@ def userRequest(request):
     # return render(request, 'test.html')
     # 获得用户的注册信息
     userAcc = request.POST.get('userAcc')
-    createUserId()
+    # createUserId()
     # 判断用户账号是否存在
-    if accountIsExit(userAcc):
+    if accountIsNotExit(userAcc):
         userPass = request.POST.get('userPass')
         userGender = request.POST.get('userGender')
         userObj = UserInfo()  # 创建userInfo对象
-        # userObj.userID
-    return render(request, 'register.html')
+        userObj.userID = createUserId()
+        userObj.userAccount = userAcc
+        userObj.userPass = userPass
+        userObj.userGender = userGender
+        userObj.userBirth = datetime.date(year=2012, month=12, day=2)
+        userObj.save()  # 保存用户对象
+        return render(request, 'test.html')
+    # return render(request, 'register.html')
+    return redirect('/page/register.html')
 
 
 def orderAdd(request):
