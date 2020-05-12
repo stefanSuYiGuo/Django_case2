@@ -2,9 +2,15 @@ from django.shortcuts import render
 # from .models import UserInfo, OrderInfo, Product, UserGoods
 from .models import UserInfo, OrderInfo, Product
 from .util import getOrderId
+from .service import accountIsExit
 
 
 # Create your views here.
+# 公共函数 用来访问界面
+def toPage(request, page_name):
+    return render(request, page_name)
+
+
 # 用户注册 register.html处理
 def userRequest(request):
     # # 创建并保存对象
@@ -15,6 +21,12 @@ def userRequest(request):
     #                         userGender='Male')
     #
     # return render(request, 'test.html')
+    # 获得用户的注册信息
+    userAcc = request.POST.get('userAcc')
+    # 判断用户账号是否存在
+    if accountIsExit(userAcc):
+        userPass = request.POST.get('userPass')
+        userGender = request.POST.get('userGender')
     return render(request, 'register.html')
 
 
