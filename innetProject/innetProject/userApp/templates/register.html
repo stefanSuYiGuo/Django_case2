@@ -5,7 +5,7 @@
     <title>Register</title>
 </head>
 <body>
-<form action="user/add/" method="post">
+<form action="/user/add/" method="post">
     {% csrf_token %}
     Account: <input type="text" name="userAcc" placeholder="input account"><br/>
     Password: <input type="password" name="userPass"><br/>
