@@ -6,7 +6,7 @@ from .service import accountIsExit, createUserId
 
 
 # Create your views here.
-# 公共函数 用来访问界面
+# 公共函数 用来访问界面 并必须使用pageName一模一样的命名
 def toPage(request, pageName):
     return render(request, pageName)
 
