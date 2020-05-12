@@ -81,7 +81,8 @@ def userAddGoods(request):
 
 # 显示登陆者的购物车
 def showUserGoods(request):
-    user = UserInfo.objects.get(request.session.get('logUser'))  # 查找登陆的用户对象
+    print(request.session.get('logUser'))
+    user = UserInfo.objects.get('logUser')  # 查找登陆的用户对象
     products = user.products.all()  # 获得当前用户的购物车商品
     context = {'products': products}
     # return render(request, 'goodsPage.html')
