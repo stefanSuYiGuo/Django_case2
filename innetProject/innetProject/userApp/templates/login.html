@@ -2,9 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Login</title>
 </head>
 <body>
-
+<form action="/user/login/" method="post">
+    {% csrf_token %}
+    Account: <input type="text" name="userAcc" placeholder="input account"><br/>
+    Password: <input type="password" name="userPass"><br/>
+    <input type="submit" value="register">
+    {{ error }}
+</form>
 </body>
 </html>
