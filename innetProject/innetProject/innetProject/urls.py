@@ -23,4 +23,5 @@ urlpatterns = [
     path('user/add/', userViews.userRequest),
     path('test/orderadd/', userViews.orderAdd),
     path('test/adduserGoods/', userViews.userAddGoods),
+    path('', userViews.toIndex)
 ]
