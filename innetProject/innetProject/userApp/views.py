@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 # from .models import UserInfo, OrderInfo, Product, UserGoods
 from .models import UserInfo, OrderInfo, Product
 from .util import getOrderId
@@ -87,3 +87,15 @@ def showUserGoods(request):
     context = {'products': products}
     # return render(request, 'goodsPage.html')
     return render(request, 'goodsPage.html', context=context)
+
+
+# 测试用户账号是否可以注册
+def checkUserAccIsReg(request):
+    useracc = request.GET.get('userAcc', None)  # 获得客户端发送的账号
+    print(useracc + '00000000000000')
+    flag = accountIsNotExit(useracc)  # 判断账号是否存在  不存在返回true存在返回false
+    if flag:
+        info = 'valid account'
+    else:
+        info = 'invalid account'
+    return HttpResponse(info, content_type='text/text')  # 将信息响应给客户端的
