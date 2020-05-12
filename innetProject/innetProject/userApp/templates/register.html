@@ -7,7 +7,8 @@
 <body>
 <form action="/user/add/" method="post">
     {% csrf_token %}
-    Account: <input type="text" name="userAcc" placeholder="input account"><br/>
+    Account: <input type="text" name="userAcc" id="userAcc" placeholder="input account">
+    <span id="accInfo"></span><br/>
     Password: <input type="password" name="userPass"><br/>
     Gender: <input type="radio" name="userGender" value="male" checked> Male
     <input type="radio" name="userGender" value="female"> Female <br/>
