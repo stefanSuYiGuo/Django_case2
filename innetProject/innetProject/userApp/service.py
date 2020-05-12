@@ -1,4 +1,5 @@
 from .models import UserInfo, OrderInfo, Product
+from django.db import models
 
 
 # 定义函数判断用户站好是否存在
@@ -8,3 +9,9 @@ def accountIsExit(user_account):
         return True  # 代表账号不存在
     else:
         return False
+
+
+def createUserId():
+    result = UserInfo.objects.aggregate(models.Max('userID'))
+    print('-----------' + str(result))
+    return None
