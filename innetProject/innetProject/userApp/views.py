@@ -11,6 +11,7 @@ def toIndex(request):
     return render(request, 'index.html')
 
 
+# 登陆操作
 def userLogin(request):
     userAcc = request.POST.get('userAcc')
     userPass = request.POST.get('userPass')
