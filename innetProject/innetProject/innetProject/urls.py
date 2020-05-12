@@ -21,6 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('page/<str:pageName>', userViews.toPage),
     path('user/add/', userViews.userRequest),
+    path('user/login/', userViews.userLogin),
     path('test/orderadd/', userViews.orderAdd),
     path('test/adduserGoods/', userViews.userAddGoods),
     path('', userViews.toIndex)
