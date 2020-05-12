@@ -2,13 +2,24 @@ from django.shortcuts import render, redirect
 # from .models import UserInfo, OrderInfo, Product, UserGoods
 from .models import UserInfo, OrderInfo, Product
 from .util import getOrderId
-from .service import accountIsNotExit, createUserId
+from .service import accountIsNotExit, createUserId, loingUser
 import datetime
 
 
 # Create your views here.
 def toIndex(request):
     return render(request, 'index.html')
+
+
+def userLogin(request):
+    userAcc = request.POST.get('userAcc')
+    userPass = request.POST.get('userPass')
+    logUser = loingUser(userAcc, userPass)  # 用户登录 账号密码正确返回对象 否则返回None
+    if logUser is not None:
+        request.session['logUser'] = logUser.userAccount
+    else:
+        return render(request, 'login.html', context={'error': 'Invalid Account or Password'})
+    return render(request, 'test.html')
 
 
 # 公共函数 用来访问界面 并必须使用pageName一模一样的命名
