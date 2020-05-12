@@ -25,6 +25,9 @@ class UserInfo(models.Model):
     userBirth = models.DateField()
     userGender = models.CharField(max_length=6)
 
+    # 另一种方式建立 M:M关系  这会让Django自动创建表 userInfoTable_products
+    products = models.ManyToManyField('Product')
+
     class Meta:
         db_table = 'userInfoTable'
 
@@ -63,9 +66,9 @@ class Product(models.Model):
 
 
 # 用户购物车 多对多关系设置
-class UserGoods(models.Model):
-    user = models.ForeignKey(UserInfo, on_delete=models.DO_NOTHING)
-    pro = models.ForeignKey(Product, on_delete=models.DO_NOTHING)
-
-    class Meta:
-        db_table = 'userGoods'
+# class UserGoods(models.Model):
+#     user = models.ForeignKey(UserInfo, on_delete=models.DO_NOTHING)
+#     pro = models.ForeignKey(Product, on_delete=models.DO_NOTHING)
+#
+#     class Meta:
+#         db_table = 'userGoods'
